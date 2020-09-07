@@ -19,15 +19,9 @@ https://stackoverflow.com/questions/42646016/what-does-the-arrow-operator-do-in-
 
      */
     fun size(): Int{
-            return children.fold(
-                1,
-                {size , child -> size + child.size()}
-            )
+            return  children.size
     }
 
-    fun height(): Int{
-        return 1 + (children.map { it.size() }.max() ?: 0 )
-    }
 
     fun add(value: Int){
         children.add(Tree(value))
@@ -44,7 +38,8 @@ fun main(){
     treeVar.add(10)
 
     println("Tree's size is " + treeVar.size())
-    println("Tree's height is "+ treeVar.height())
+
+    println("Tree's elements are as follows: ")
 
     val iterate = treeVar.getTreeValues()
     for(element in iterate){
@@ -54,8 +49,8 @@ fun main(){
     treeVar.add(20)
 
     println("Tree's size is " + treeVar.size())
-    println("Tree's height is "+ treeVar.height())
 
+    println("Tree's elements are as follows: ")
 
     for(element in iterate){
         println(""+element.value)
@@ -66,7 +61,8 @@ fun main(){
     treeVar.add(107)
 
     println("Tree's size is " + treeVar.size())
-    println("Tree's height is "+ treeVar.height())
+
+    println("Tree's elements are as follows: ")
 
     for(element in iterate){
         println(""+element.value)
@@ -74,26 +70,23 @@ fun main(){
 
 }
 
-
+//This is not a Binary Tree
+//Can consider as adding elements in the list :D :P
 /*
 Output
 
-Why the size is +1 than actual size
-
-Tree's size is 2
-Tree's height is 2
+Tree's size is 1
+Tree's elements are as follows:
 10
-Tree's size is 3
-Tree's height is 2
+Tree's size is 2
+Tree's elements are as follows:
 10
 20
-Tree's size is 6
-Tree's height is 2
+Tree's size is 5
+Tree's elements are as follows:
 10
 20
 90
 5
 107
-
-
  */
