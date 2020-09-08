@@ -32,11 +32,11 @@ var right: BinaryTree?){
             return 0
         } else {
 
-            leftCount = if (left == null ) 0
-               else left!!.height()
+            leftCount = if (left?.left == null ) 0
+               else left?.left?.height()!!
 
-            rightCount = if(right == null ) 0
-                else right!!.height()
+            rightCount = if(right?.right == null ) 0
+                else right?.right?.height()!!
 
             println("leftCount = "+leftCount )
             println("rightCount = "+rightCount)
@@ -110,8 +110,11 @@ fun main(){
 
     printData(treeVar)
 
-
-
+//    treeVar.insert(1 , false)
+//    treeVar.insert(2 , false)
+//    treeVar.insert(3 , false)
+//
+//    printData(treeVar)
 }
 
 fun printData(treeVar: BinaryTree){
@@ -146,6 +149,10 @@ Output
 Need to check the height issue it's showing +1 height and if we don't do +1
 in return of maxOf it's showing 0 for everyone need to check.
 
+in foll. output height is showing right but only for these number of nodes
+if one more level is added like the 3 lines commented above again height is wrong
+and even 3 is not getting inserted as we r adding left.left.left need to check this
+
 Tree's size is : 1
 Tree's height is : 0
 Root element is : 10
@@ -162,7 +169,7 @@ leftCount = 0
 rightCount = 0
 leftCount = 1
 rightCount = 0
-Tree's height is : 2
+Tree's height is : 1
 Root element is : 10
 Left Tree elements are as follows:
 20
@@ -183,7 +190,7 @@ leftCount = 0
 rightCount = 0
 leftCount = 2
 rightCount = 1
-Tree's height is : 3
+Tree's height is : 2
 Root element is : 10
 Left Tree elements are as follows:
 20
