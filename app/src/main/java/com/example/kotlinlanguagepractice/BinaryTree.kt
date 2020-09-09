@@ -98,9 +98,13 @@ fun main(){
 
     treeVar.insert(10 , true)
 
+    println("\n\nAfter inserting root 10 into tree ")
+
     printData(treeVar)
 
     treeVar.insert(20 , false)
+
+    println("\n\nAfter inserting first node 20 into tree ")
 
     printData(treeVar)
 
@@ -108,13 +112,17 @@ fun main(){
     treeVar.insert(5 , false)
     treeVar.insert(107 , false)
 
+    println("\n\nAfter inserting three nodes 90 , 5 , 107 into tree ")
+
     printData(treeVar)
 
-//    treeVar.insert(1 , false)
-//    treeVar.insert(2 , false)
-//    treeVar.insert(3 , false)
-//
-//    printData(treeVar)
+    treeVar.insert(1 , false)
+    treeVar.insert(2 , false)
+    treeVar.insert(3 , false)
+
+    println("\n\nAfter inserting three nodes 1 , 2 , 3  into tree ")
+
+    printData(treeVar)
 }
 
 fun printData(treeVar: BinaryTree){
@@ -141,6 +149,11 @@ fun printData(treeVar: BinaryTree){
 
     println("Right's right : "+treeVar.getRightTree()?.right?.value)
 
+    /*
+    Will write the improved logic for this later :P :D
+     */
+    println("Left's left left: "+treeVar.getLeftTree()?.left?.left?.value)
+
 }
 
 /*
@@ -150,9 +163,11 @@ Need to check the height issue it's showing +1 height and if we don't do +1
 in return of maxOf it's showing 0 for everyone need to check.
 
 in foll. output height is showing right but only for these number of nodes
-if one more level is added like the 3 lines commented above again height is wrong
-and even 3 is not getting inserted as we r adding left.left.left need to check this
+if one more level is added again height is wrong it should take left tree
+count as 2 + 1 = 3 it should show height 3 for last insertion of element 3
+Will check this issue later.
 
+After inserting root 10 into tree
 Tree's size is : 1
 Tree's height is : 0
 Root element is : 10
@@ -164,10 +179,12 @@ Left's left : null
 Left's right : null
 Right's left : null
 Right's right : null
+Left's left left: null
+
+
+After inserting first node 20 into tree
 Tree's size is : 2
 leftCount = 0
-rightCount = 0
-leftCount = 1
 rightCount = 0
 Tree's height is : 1
 Root element is : 10
@@ -179,17 +196,15 @@ Left's left : null
 Left's right : null
 Right's left : null
 Right's right : null
+Left's left left: null
+
+
+After inserting three nodes 90 , 5 , 107 into tree
 Tree's size is : 5
 leftCount = 0
 rightCount = 0
-leftCount = 0
-rightCount = 0
 leftCount = 1
-rightCount = 1
-leftCount = 0
 rightCount = 0
-leftCount = 2
-rightCount = 1
 Tree's height is : 2
 Root element is : 10
 Left Tree elements are as follows:
@@ -200,4 +215,27 @@ Left's left : 5
 Left's right : 107
 Right's left : null
 Right's right : null
+Left's left left: null
+
+
+After inserting three nodes 1 , 2 , 3  into tree
+Tree's size is : 8
+leftCount = 0
+rightCount = 0
+leftCount = 0
+rightCount = 0
+leftCount = 1
+rightCount = 1
+Tree's height is : 2
+Root element is : 10
+Left Tree elements are as follows:
+20
+Right Tree elements are as follows:
+90
+Left's left : 5
+Left's right : 107
+Right's left : 1
+Right's right : 2
+Left's left left: 3
+
  */
